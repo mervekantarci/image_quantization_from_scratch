@@ -13,15 +13,23 @@ Initial colors can be picked from the interactive window or randomly.
 --random_init         cluster centers will be randomly initialized. Do not set this flag to choose colors from the interactive window
 --save                processed image will be saved
 --no_display          processed image will not be displayed
-
 ```
 
-**Example Command**
+**Example Command (Random Initialization)**
 ```
 python main.py -file sample.jpg --save --random_init --cluster_count 10
 ```
 
 Input             |  Quantized (#C=2) |  Quantized (#C=5) |  Quantized (#C=10)
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/mervekantarci/image_quantization/blob/main/sample.jpg)  |  ![](https://github.com/mervekantarci/image_quantization/blob/main/sample_quantized_2.jpg) |  ![](https://github.com/mervekantarci/image_quantization/blob/main/sample_quantized_5.jpg)|  ![](https://github.com/mervekantarci/image_quantization/blob/main/sample_quantized_10.jpg)
+![](https://github.com/mervekantarci/image_quantization/blob/main/sample.jpg)  |  ![](https://github.com/mervekantarci/image_quantization/blob/main/output/sample_quantized_random_2.jpg) |  ![](https://github.com/mervekantarci/image_quantization/blob/main/output/sample_quantized_random_5.jpg)|  ![](https://github.com/mervekantarci/image_quantization/blob/main/output/sample_quantized_random_10.jpg)
 
+
+**Example Command (Manually Picked Colors)**
+```
+python main.py -file sample.jpg --save --cluster_count 10
+```
+
+Input             |  Quantized (#C=2) |  Quantized (#C=5) |  Quantized (#C=10)
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/mervekantarci/image_quantization/blob/main/sample.jpg)  |  ![](https://github.com/mervekantarci/image_quantization/blob/main/output/sample_quantized_picked_2.jpg) |  ![](https://github.com/mervekantarci/image_quantization/blob/main/output/sample_quantized_picked_5.jpg)|  ![](https://github.com/mervekantarci/image_quantization/blob/main/output/sample_quantized_picked_10.jpg)
