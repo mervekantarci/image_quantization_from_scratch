@@ -102,12 +102,13 @@ def quantize(img, K, max_iter=10, random_init=False):
     return quantized_img
 
 
-def output(img, save=True, show=True, filepath=None, cluster_count=0):
-    if save:
-        filename, file_extension = os.path.splitext(filepath)
-        save_path = filename + "_quantized_" + str(cluster_count) + file_extension
+def output(img, args):
+    if args.save:
+        filename, file_extension = os.path.splitext(args.file)
+        init_text = "random_" if args.random_init else "picked_"
+        save_path = filename + "_quantized_" + init_text + str(args.cluster_count) + file_extension
         Image.fromarray(img.astype(np.uint8)).save(save_path)
-    if show:
+    if not args.no_display:
         plt.imshow(img)
         plt.show()
 
@@ -120,10 +121,4 @@ if __name__ == '__main__':
     im = cv2.imread(args.file)  # enter the path to the image
     im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
     processed_img = quantize(im, K=args.cluster_count, max_iter=args.max_iter, random_init=args.random_init)
-    output(processed_img, save=args.save, show=not args.no_display,
-           filepath=args.file, cluster_count=args.cluster_count)
-
-
-
-
-
+    output(processed_img, args)
