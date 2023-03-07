@@ -16,8 +16,8 @@ def get_args():
     parser.add_argument('--max_iter', required=False, type=int, default=10,
                         help='maximum number of iteration until convergence (default 10)')
     parser.add_argument('--random_init', required=False, action="store_true", default=False,
-                        help='cluster centers will be randomly initialized'
-                             'Do not set this flag to choose colors from the window')
+                        help='cluster centers will be randomly initialized. '
+                             'Do not set this flag to choose colors from the interactive window')
     parser.add_argument('--save', required=False, action="store_true", default=False,
                         help='processed image will be saved')
     parser.add_argument('--no_display', required=False, action="store_true", default=False,
